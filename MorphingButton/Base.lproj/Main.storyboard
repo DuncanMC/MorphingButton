@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LVS-mu-kti">
-                                <rect key="frame" x="113" y="449" width="95" height="70"/>
+                                <rect key="frame" x="113" y="81" width="95" height="70"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YWl-yg-QWI">
                                         <rect key="frame" x="20" y="20" width="55" height="30"/>
@@ -52,21 +52,28 @@
                                     <constraint firstAttribute="height" constant="70" id="pR9-vC-mlA"/>
                                 </constraints>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Swift icon" translatesAutoresizingMaskIntoConstraints="NO" id="yAZ-MP-3ba">
-                                <rect key="frame" x="145" y="399" width="30" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="IWr-zs-byz"/>
-                                    <constraint firstAttribute="width" constant="30" id="opH-OQ-FRE"/>
-                                </constraints>
-                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swift" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WcF-5O-zjp">
+                                <rect key="frame" x="141" y="40" width="39" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="centerX" secondItem="WcF-5O-zjp" secondAttribute="centerX" id="6wj-BF-jcd"/>
                             <constraint firstAttribute="centerX" secondItem="LVS-mu-kti" secondAttribute="centerX" id="7EL-hH-aN9"/>
+                            <constraint firstItem="LVS-mu-kti" firstAttribute="top" secondItem="WcF-5O-zjp" secondAttribute="bottom" constant="20" id="Fs5-t7-UOt"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="LVS-mu-kti" secondAttribute="bottom" id="SCH-GK-vo3"/>
-                            <constraint firstItem="LVS-mu-kti" firstAttribute="top" secondItem="yAZ-MP-3ba" secondAttribute="bottom" constant="20" id="eLz-ZP-NaU"/>
-                            <constraint firstAttribute="centerX" secondItem="yAZ-MP-3ba" secondAttribute="centerX" id="fj1-bs-FqN"/>
+                            <constraint firstItem="WcF-5O-zjp" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="X3B-W2-nMQ"/>
+                            <constraint firstItem="LVS-mu-kti" firstAttribute="top" secondItem="WcF-5O-zjp" secondAttribute="bottom" constant="20" id="caz-gu-dUd"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="caz-gu-dUd"/>
+                                <exclude reference="SCH-GK-vo3"/>
+                            </mask>
+                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Swift" image="Swift icon" selectedImage="Swift icon" id="7zo-SV-LOj"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
@@ -92,8 +99,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BWw-gv-Jxc">
-                                <rect key="frame" x="113" y="449" width="95" height="70"/>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BWw-gv-Jxc">
+                                <rect key="frame" x="113" y="99" width="95" height="70"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lOl-dq-xj2">
                                         <rect key="frame" x="20" y="20" width="55" height="30"/>
@@ -128,12 +135,26 @@
                                     <constraint firstAttribute="height" constant="70" id="yjJ-Hr-7cN"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Objective-C" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vbI-ml-4y9">
+                                <rect key="frame" x="114" y="40" width="92" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="centerX" secondItem="vbI-ml-4y9" secondAttribute="centerX" id="3cy-vo-BtU"/>
+                            <constraint firstItem="BWw-gv-Jxc" firstAttribute="top" secondItem="vbI-ml-4y9" secondAttribute="bottom" constant="20" id="8Bi-VL-ZTm"/>
                             <constraint firstAttribute="centerX" secondItem="BWw-gv-Jxc" secondAttribute="centerX" id="Iho-dJ-2K5"/>
                             <constraint firstItem="aem-dJ-mW4" firstAttribute="top" secondItem="BWw-gv-Jxc" secondAttribute="bottom" id="dFP-yy-fYy"/>
+                            <constraint firstItem="vbI-ml-4y9" firstAttribute="top" secondItem="XrD-8C-kZc" secondAttribute="bottom" constant="20" id="v15-2c-OsV"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="dFP-yy-fYy"/>
+                            </mask>
+                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Objective-C" id="c4q-fc-1qa"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
