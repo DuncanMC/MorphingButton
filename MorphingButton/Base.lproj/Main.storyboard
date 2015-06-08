@@ -75,7 +75,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Swift" image="Swift icon" selectedImage="Swift icon" id="7zo-SV-LOj"/>
+                    <tabBarItem key="tabBarItem" title="Swift" image="Swift icon" id="7zo-SV-LOj"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="button" destination="YWl-yg-QWI" id="Mhb-bk-QZg"/>
@@ -156,7 +156,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Objective-C" id="c4q-fc-1qa"/>
+                    <tabBarItem key="tabBarItem" title="Objective-C" image="Objective-C icon" id="c4q-fc-1qa"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
@@ -191,6 +191,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Objective-C icon" width="30" height="30"/>
         <image name="Swift icon" width="30" height="30"/>
     </resources>
 </document>
