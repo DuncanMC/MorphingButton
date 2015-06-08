@@ -13,6 +13,8 @@
 		AE0A45F11B23DFC10038C170 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE0A45F01B23DFC10038C170 /* Images.xcassets */; };
 		AE0A45F41B23DFC10038C170 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE0A45F21B23DFC10038C170 /* LaunchScreen.xib */; };
 		AE0A46001B23DFC10038C170 /* MorphingButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0A45FF1B23DFC10038C170 /* MorphingButtonTests.swift */; };
+		AE0A460A1B23E0120038C170 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0A46091B23E0120038C170 /* UIViewExtensions.swift */; };
+		AE0E263C1B25D0E100684617 /* ObjectiveCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEDFAEDC1B25BD1300A2E808 /* ObjectiveCViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,10 @@
 		AE0A45F91B23DFC10038C170 /* MorphingButtonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MorphingButtonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE0A45FE1B23DFC10038C170 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AE0A45FF1B23DFC10038C170 /* MorphingButtonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MorphingButtonTests.swift; sourceTree = "<group>"; };
+		AE0A46091B23E0120038C170 /* UIViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
+		AEDFAEDA1B25BD1200A2E808 /* MorphingButton-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MorphingButton-Bridging-Header.h"; sourceTree = "<group>"; };
+		AEDFAEDB1B25BD1300A2E808 /* ObjectiveCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectiveCViewController.h; sourceTree = "<group>"; };
+		AEDFAEDC1B25BD1300A2E808 /* ObjectiveCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjectiveCViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,12 +83,16 @@
 		AE0A45E61B23DFC10038C170 /* MorphingButton */ = {
 			isa = PBXGroup;
 			children = (
+				AE0A46091B23E0120038C170 /* UIViewExtensions.swift */,
 				AE0A45E91B23DFC10038C170 /* AppDelegate.swift */,
 				AE0A45EB1B23DFC10038C170 /* ViewController.swift */,
+				AEDFAEDB1B25BD1300A2E808 /* ObjectiveCViewController.h */,
+				AEDFAEDC1B25BD1300A2E808 /* ObjectiveCViewController.m */,
 				AE0A45ED1B23DFC10038C170 /* Main.storyboard */,
 				AE0A45F01B23DFC10038C170 /* Images.xcassets */,
 				AE0A45F21B23DFC10038C170 /* LaunchScreen.xib */,
 				AE0A45E71B23DFC10038C170 /* Supporting Files */,
+				AEDFAEDA1B25BD1200A2E808 /* MorphingButton-Bridging-Header.h */,
 			);
 			path = MorphingButton;
 			sourceTree = "<group>";
@@ -213,6 +223,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE0A45EC1B23DFC10038C170 /* ViewController.swift in Sources */,
+				AE0A460A1B23E0120038C170 /* UIViewExtensions.swift in Sources */,
+				AE0E263C1B25D0E100684617 /* ObjectiveCViewController.m in Sources */,
 				AE0A45EA1B23DFC10038C170 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -342,9 +354,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = MorphingButton/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MorphingButton/MorphingButton-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -352,9 +367,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = MorphingButton/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MorphingButton/MorphingButton-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -411,6 +428,7 @@
 				AE0A46051B23DFC10038C170 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AE0A46061B23DFC10038C170 /* Build configuration list for PBXNativeTarget "MorphingButtonTests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +437,7 @@
 				AE0A46081B23DFC10038C170 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
