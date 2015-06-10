@@ -10,16 +10,22 @@
 
 @implementation ObjectiveCViewController
 
+//-------------------------------------------------------------------------------------------------------
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
+//-------------------------------------------------------------------------------------------------------
+
 - (void) viewWillAppear:(BOOL)animated
 {
   [super viewWillAppear:animated];
 }
+
+//-------------------------------------------------------------------------------------------------------
 
 - (void)viewDidLoad
 {
@@ -29,11 +35,16 @@
   animationDuration = 0.5;
 }
 
+//-------------------------------------------------------------------------------------------------------
+#pragma mark - IBAction methods
+//-------------------------------------------------------------------------------------------------------
+
+
 - (IBAction)handleButton:(id)sender
 {
   CGFloat newHeight;
   CGFloat newCornerRadius;
-  NSLog(@"Entering %s", __PRETTY_FUNCTION__);
+  // NSLog(@"Entering %s", __PRETTY_FUNCTION__);
   
   if (buttonIsRound)
   {
@@ -65,6 +76,22 @@
   [button.layer addAnimation: cornerAnimation forKey: @"woof"];
   button.layer.cornerRadius = newCornerRadius;
   buttonIsRound = !buttonIsRound;
+}
+
+//-------------------------------------------------------------------------------------------------------
+
+- (IBAction)hideLabel:(id)sender
+{
+  //NSLog(@"Entering %s", __PRETTY_FUNCTION__);
+  label.hidden = YES;
+}
+
+//-------------------------------------------------------------------------------------------------------
+
+- (IBAction)showLabel:(id)sender
+{
+  //NSLog(@"Entering %s", __PRETTY_FUNCTION__);
+  label.hidden = NO;
 }
 
 @end

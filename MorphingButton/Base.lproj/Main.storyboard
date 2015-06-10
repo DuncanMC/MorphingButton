@@ -41,6 +41,10 @@
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="handleButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="13B-wL-YMq"/>
+                                            <action selector="hideLabel:" destination="BYZ-38-t0r" eventType="touchCancel" id="EFf-j7-mh6"/>
+                                            <action selector="hideLabel:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NHf-cb-ZSL"/>
+                                            <action selector="hideLabel:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="VTL-aC-2D5"/>
+                                            <action selector="showLabel:" destination="BYZ-38-t0r" eventType="touchDown" id="ie5-p1-7fI"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -58,6 +62,12 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Button pressed" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ph-RT-Oip">
+                                <rect key="frame" x="101" y="181" width="118" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -67,6 +77,8 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="LVS-mu-kti" secondAttribute="bottom" id="SCH-GK-vo3"/>
                             <constraint firstItem="WcF-5O-zjp" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="X3B-W2-nMQ"/>
                             <constraint firstItem="LVS-mu-kti" firstAttribute="top" secondItem="WcF-5O-zjp" secondAttribute="bottom" constant="20" id="caz-gu-dUd"/>
+                            <constraint firstAttribute="centerX" secondItem="0ph-RT-Oip" secondAttribute="centerX" id="mF7-hZ-PXn"/>
+                            <constraint firstItem="0ph-RT-Oip" firstAttribute="top" secondItem="LVS-mu-kti" secondAttribute="bottom" constant="30" id="maK-nK-JcY"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -80,6 +92,7 @@
                     <connections>
                         <outlet property="button" destination="YWl-yg-QWI" id="Mhb-bk-QZg"/>
                         <outlet property="buttonHeightConstraint" destination="jZt-YN-uiD" id="1tz-BG-tnV"/>
+                        <outlet property="buttonPressedLabel" destination="0ph-RT-Oip" id="9qB-WU-LIr"/>
                         <outlet property="buttonWidthConstraint" destination="r6w-Gb-CSK" id="B3a-uh-3Sy"/>
                     </connections>
                 </viewController>
@@ -124,6 +137,10 @@
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="handleButton:" destination="Atv-RG-GEx" eventType="touchUpInside" id="3qD-4E-2TY"/>
+                                            <action selector="hideLabel:" destination="Atv-RG-GEx" eventType="touchUpInside" id="7pS-yW-NfW"/>
+                                            <action selector="hideLabel:" destination="Atv-RG-GEx" eventType="touchCancel" id="9jJ-Ew-fh3"/>
+                                            <action selector="hideLabel:" destination="Atv-RG-GEx" eventType="touchUpOutside" id="B1j-oq-Tmm"/>
+                                            <action selector="showLabel:" destination="Atv-RG-GEx" eventType="touchDown" id="t7u-tG-F4e"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -141,6 +158,12 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Button pressed" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rzn-4c-R7D">
+                                <rect key="frame" x="101" y="181" width="118" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -148,7 +171,9 @@
                             <constraint firstItem="BWw-gv-Jxc" firstAttribute="top" secondItem="vbI-ml-4y9" secondAttribute="bottom" constant="20" id="8Bi-VL-ZTm"/>
                             <constraint firstAttribute="centerX" secondItem="BWw-gv-Jxc" secondAttribute="centerX" id="Iho-dJ-2K5"/>
                             <constraint firstItem="aem-dJ-mW4" firstAttribute="top" secondItem="BWw-gv-Jxc" secondAttribute="bottom" id="dFP-yy-fYy"/>
+                            <constraint firstItem="rzn-4c-R7D" firstAttribute="top" secondItem="BWw-gv-Jxc" secondAttribute="bottom" constant="30" id="mzv-KS-SBK"/>
                             <constraint firstItem="vbI-ml-4y9" firstAttribute="top" secondItem="XrD-8C-kZc" secondAttribute="bottom" constant="20" id="v15-2c-OsV"/>
+                            <constraint firstAttribute="centerX" secondItem="rzn-4c-R7D" secondAttribute="centerX" id="wBH-G0-xUK"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -163,6 +188,7 @@
                         <outlet property="button" destination="lOl-dq-xj2" id="5C7-2r-HMg"/>
                         <outlet property="buttonHeightConstraint" destination="IA1-qv-rpN" id="De2-Vh-4jE"/>
                         <outlet property="buttonWidthConstraint" destination="Itc-1Z-FBd" id="4Mg-yV-FAY"/>
+                        <outlet property="label" destination="rzn-4c-R7D" id="fCQ-DK-apx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lz4-tG-9Gh" userLabel="First Responder" sceneMemberID="firstResponder"/>

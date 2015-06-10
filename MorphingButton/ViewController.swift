@@ -9,62 +9,76 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-  var animationDuration = 0.5
+  
+  //Outlets
   @IBOutlet weak var button: UIButton!
   @IBOutlet weak var buttonHeightConstraint: NSLayoutConstraint!
   @IBOutlet weak var buttonWidthConstraint: NSLayoutConstraint!
+  @IBOutlet weak var buttonPressedLabel: UILabel!
   
+  //
+  var animationDuration = 0.5
+
   var oldHeight: CGFloat!
   var buttonIsRound = false
+  
+  //-------------------------------------------------------------------------------------------------------
+  
   override func viewDidLoad()
   {
     super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
     oldHeight = buttonHeightConstraint.constant
-
   }
-
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
-  }
-
-  override func viewWillAppear(animated: Bool) {
-  }
-@IBAction func handleButton(sender: AnyObject)
-{
-  if !buttonIsRound
+  
+  //-------------------------------------------------------------------------------------------------------
+  // MARK: - IBAction Methods
+  //-------------------------------------------------------------------------------------------------------
+  
+  @IBAction func handleButton(sender: AnyObject)
   {
-    UIView.animateWithDuration(animationDuration)
-      {
-        self.buttonHeightConstraint.constant = self.buttonWidthConstraint.constant
-        self.button.layoutIfNeeded()
-        self.buttonIsRound = true
+    if !buttonIsRound
+    {
+      UIView.animateWithDuration(animationDuration)
+        {
+          self.buttonHeightConstraint.constant = self.buttonWidthConstraint.constant
+          self.button.layoutIfNeeded()
+          self.buttonIsRound = true
+      }
+      let cornerAnimation = CABasicAnimation(keyPath: "cornerRadius")
+      cornerAnimation.fromValue = button.layer.cornerRadius
+      cornerAnimation.toValue = self.buttonWidthConstraint.constant / 2.0
+      cornerAnimation.duration = animationDuration
+      button.layer.addAnimation(cornerAnimation, forKey: "woof")
+      button.layer.cornerRadius = self.buttonWidthConstraint.constant / 2.0
+      button.frame.size.height += 10
     }
-    let cornerAnimation = CABasicAnimation(keyPath: "cornerRadius")
-    cornerAnimation.fromValue = button.layer.cornerRadius
-    cornerAnimation.toValue = self.buttonWidthConstraint.constant / 2.0
-    cornerAnimation.duration = animationDuration
-    button.layer.addAnimation(cornerAnimation, forKey: "woof")
-    button.layer.cornerRadius = self.buttonWidthConstraint.constant / 2.0
-    button.frame.size.height += 10
+    else
+    {
+      UIView.animateWithDuration(animationDuration)
+        {
+          self.buttonHeightConstraint.constant = self.oldHeight
+          self.button.layoutIfNeeded()
+          self.buttonIsRound = false
+      }
+      let cornerAnimation = CABasicAnimation(keyPath: "cornerRadius")
+      cornerAnimation.fromValue = self.buttonWidthConstraint.constant / 2.0
+      cornerAnimation.toValue = 10
+      cornerAnimation.duration = animationDuration
+      button.layer.addAnimation(cornerAnimation, forKey: "woof")
+      button.layer.cornerRadius = 10
+    }
   }
-  else
+  //-------------------------------------------------------------------------------------------------------
+  
+  @IBAction func showLabel(sender: AnyObject)
   {
-    UIView.animateWithDuration(animationDuration)
-      {
-        self.buttonHeightConstraint.constant = self.oldHeight
-        self.button.layoutIfNeeded()
-        self.buttonIsRound = false
-    }
-    let cornerAnimation = CABasicAnimation(keyPath: "cornerRadius")
-    cornerAnimation.fromValue = self.buttonWidthConstraint.constant / 2.0
-    cornerAnimation.toValue = 10
-    cornerAnimation.duration = animationDuration
-    button.layer.addAnimation(cornerAnimation, forKey: "woof")
-    button.layer.cornerRadius = 10
+    buttonPressedLabel.hidden = false
   }
-}
+  
+  @IBAction func hideLabel(sender: AnyObject)
+  {
+    buttonPressedLabel.hidden = true
+  }
+  
 }
 
